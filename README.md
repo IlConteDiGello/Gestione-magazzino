@@ -1,0 +1,2 @@
+# Gestione-magazzino
+lavoro Rinaldi
