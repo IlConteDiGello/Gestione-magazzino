@@ -8,13 +8,13 @@ using namespace std;
 
 struct Prodotto {
     string nomeProdotto;
-    int prezzoDiAcquisto;
-    int prezzoDiVendita;
+    float prezzoDiAcquisto;
+    float prezzoDiVendita;
     int quantitaInMagazzino;
-    int iva;
-    int prezzoConIva;
-    int margineUnitario;
-    int valoreTotaleMagazzino;
+    float iva;
+    float prezzoConIva;
+    float margineUnitario;
+    float valoreTotaleMagazzino;
     bool riordino;
 };
 
@@ -54,4 +54,28 @@ int main(){
         tabellaProdotti[i].valoreTotaleMagazzino = quantitaInMagazzino * prezzoDiAcquisto;
         tabellaProdotti[i].riordino = (quantitaInMagazzino < 5);
     }
+
+    float totaleMagazzino = 0;
+    int prodottiDaRiordinare = 0;
+
+    for (int i = 0; i<numeroProdottiInput; i++){
+        cout << tabellaProdotti[i].nomeProdotto << '\t';
+        cout << tabellaProdotti[i].prezzoDiAcquisto << '\t';
+        cout << tabellaProdotti[i].prezzoDiVendita << '\t';
+        cout << tabellaProdotti[i].quantitaInMagazzino << '\t';
+        cout << tabellaProdotti[i].iva << '\t';
+        cout << tabellaProdotti[i].prezzoConIva << '\t';
+        cout << tabellaProdotti[i].margineUnitario << '\t';
+        cout << tabellaProdotti[i].valoreTotaleMagazzino << '\t';
+        cout << tabellaProdotti[i].riordino << '\n';
+
+        totaleMagazzino += tabellaProdotti[i].valoreTotaleMagazzino;
+        if (tabellaProdotti[i].riordino)
+            prodottiDaRiordinare++;
+    }
+
+    cout << "Valore totale del magazzino: " << totaleMagazzino << '\n';
+    cout << "Numero di prodotti da riordinare: " << prodottiDaRiordinare << '\n';
+
+
 }
