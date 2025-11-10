@@ -4,12 +4,13 @@
 
 using namespace std;
 
-void main(){
+struct Prodotto {
     string nomeProdotto;
-
     int prezzoDiAcquisto;
-
     int prezzoDiVendita;
+    int sotck;
+}
 
-    int quantitaInMagazzino;
+void main(){
+    
 }
